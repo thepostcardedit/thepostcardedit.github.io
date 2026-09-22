@@ -2,18 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://thepostcardedit.github.io/the_postcard_edit/</loc>
-    <priority>1.0</priority>
+    <loc>https://thepostcardedits.com/</loc>
   </url>
 
   <url>
-    <loc>https://thepostcardedit.github.io/the_postcard_edit/about.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://thepostcardedit.github.io/the_postcard_edit/contact.html</loc>
-    <priority>0.8</priority>
+    <loc>https://thepostcardedits.com/about.html</loc>
   </url>
 
 </urlset>
