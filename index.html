@@ -1,54 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Postcard Edit – Official Website</title>
-  <meta name="description" content="The official website of The Postcard Edit — pretty pictures of the mundane. Original creator since 2013. Follow on Instagram @the_postcard_edit.">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="The Postcard Edit – Official Website">
-  <meta property="og:description" content="Pretty pictures of the mundane. Original creator since 2013.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourwebsiteurl.com">
-  <meta property="og:image" content="https://yourwebsiteurl.com/cover.jpg">
-
-  <!-- Structured Data for Google Identity -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "The Postcard Edit",
-    "alternateName": "The Postcard Edit",
-    "description": "Pretty pictures of the mundane.",
-    "url": "https://yourwebsiteurl.com",
-    "sameAs": [
-      "https://www.instagram.com/the_postcard_edit"
-    ],
-    "foundingDate": "2013"
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Postcard Edit — London discoveries, Est. 2013</title>
+<link rel="canonical" href="https://thepostcardedits.com/">
+<meta name="description" content="The Postcard Edit is a London-based hobby project, established in 2013, sharing photography, cafés, walks, pop-ups, culture and everyday discoveries.">
+<meta property="og:title" content="The Postcard Edit — London discoveries, Est. 2013">
+<meta property="og:description" content="Photography, cafés, walks, pop-ups, culture and everyday discoveries from London.">
+<meta property="og:url" content="https://thepostcardedits.com/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2b3a;
+    --paper:#f1ead9;
+    --paper-dark:#e6dcc4;
+    --stamp:#a33324;
+    --stamp-dark:#7f2519;
+    --line: rgba(28,43,58,0.18);
   }
-  </script>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Fraunces', Georgia, serif;
+    line-height:1.5;
+  }
+  .mono{
+    font-family:'Courier Prime', 'Courier New', monospace;
+  }
+  a{color:inherit;}
 
-  <style>
-    body { font-family: Arial, sans-serif; padding: 40px; max-width: 700px; margin: auto; }
-    h1 { font-size: 48px; margin-bottom: 10px; }
-    p { font-size: 18px; line-height: 1.6; }
-    a { color: #007acc; }
-  </style>
+  /* ===== Header ===== */
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:28px 6vw;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .brand .est{
+    font-family:'Courier Prime', monospace;
+    font-size:0.68rem;
+    display:block;
+    color:var(--stamp-dark);
+    margin-top:2px;
+    letter-spacing:0.08em;
+  }
+  nav a{
+    font-family:'Courier Prime', monospace;
+    font-size:0.78rem;
+    text-decoration:none;
+    margin-left:28px;
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+  }
+  nav a:hover{border-bottom-color:var(--ink);}
+
+  /* ===== Hero: postcard layout ===== */
+  .postcard-wrap{
+    max-width:980px;
+    margin:8vh auto 6vh;
+    padding:0 6vw;
+  }
+  .postcard{
+    background:var(--paper-dark);
+    border:1px solid var(--line);
+    border-radius:2px;
+    box-shadow: 6px 6px 0 rgba(28,43,58,0.06);
+    display:grid;
+    grid-template-columns: 1.15fr 1fr;
+    min-height:420px;
+  }
+  .postcard-left{
+    padding:44px 40px;
+    border-right:1px dashed var(--line);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .kicker{
+    font-family:'Courier Prime', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.06em;
+    color:var(--stamp-dark);
+    margin:0 0 18px;
+  }
+  h1{
+    font-size:clamp(2.1rem, 4.6vw, 3.4rem);
+    line-height:1.05;
+    margin:0 0 18px;
+    font-weight:600;
+    max-width:14ch;
+  }
+  .lede{
+    font-size:1.05rem;
+    max-width:42ch;
+    margin:0 0 30px;
+    color:rgba(28,43,58,0.85);
+  }
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    font-family:'Courier Prime', monospace;
+    font-size:0.82rem;
+    padding:12px 20px;
+    border:1px solid var(--ink);
+    text-decoration:none;
+    color:var(--ink);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .btn.primary{
+    background:var(--stamp);
+    border-color:var(--stamp);
+    color:var(--paper);
+  }
+  .btn.primary:hover{background:var(--stamp-dark); border-color:var(--stamp-dark);}
+  .btn:not(.primary):hover{background:var(--ink); color:var(--paper);}
+
+  .postcard-right{
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    position:relative;
+  }
+  .stamp{
+    align-self:flex-end;
+    width:76px;
+    height:92px;
+    border:2px dotted rgba(28,43,58,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-family:'Courier Prime', monospace;
+    font-size:0.62rem;
+    color:var(--stamp-dark);
+    padding:8px;
+    transform: rotate(3deg);
+  }
+  .postmark{
+    font-family:'Courier Prime', monospace;
+    font-size:0.72rem;
+    color:rgba(28,43,58,0.55);
+    line-height:1.7;
+  }
+  .postmark .to{
+    margin-top:auto;
+    border-top:1px solid var(--line);
+    padding-top:14px;
+  }
+
+  /* ===== Sections ===== */
+  section{
+    max-width:980px;
+    margin:0 auto;
+    padding:60px 6vw;
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:34px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+  }
+  .section-head .num{
+    font-family:'Courier Prime', monospace;
+    font-size:0.78rem;
+    color:var(--stamp-dark);
+  }
+  h2{
+    font-size:1.6rem;
+    margin:0;
+    font-weight:600;
+  }
+
+  /* About */
+  .about p{
+    max-width:60ch;
+    font-size:1.05rem;
+  }
+
+  /* Work grid */
+  .work-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .work-card{
+    background:var(--paper);
+    padding:26px 24px;
+  }
+  .work-card .tag{
+    font-family:'Courier Prime', monospace;
+    font-size:0.7rem;
+    color:var(--stamp-dark);
+    display:block;
+    margin-bottom:10px;
+  }
+  .work-card h3{
+    font-size:1.05rem;
+    margin:0 0 8px;
+    font-weight:600;
+  }
+  .work-card p{
+    font-size:0.92rem;
+    margin:0;
+    color:rgba(28,43,58,0.8);
+  }
+
+  /* Collabs */
+  .collab-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px 28px;
+    font-family:'Courier Prime', monospace;
+    font-size:0.95rem;
+  }
+  .collab-list span{
+    padding-bottom:4px;
+    border-bottom:1px solid var(--line);
+  }
+
+  /* Contact */
+  .contact-block{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:24px;
+  }
+  .contact-block a.email{
+    font-size:1.4rem;
+    text-decoration:none;
+    border-bottom:1px solid var(--ink);
+  }
+  .socials{
+    display:flex;
+    gap:20px;
+    font-family:'Courier Prime', monospace;
+    font-size:0.85rem;
+  }
+  .socials a{text-decoration:none; border-bottom:1px solid transparent;}
+  .socials a:hover{border-bottom-color:var(--ink);}
+
+  footer{
+    padding:26px 6vw 40px;
+    font-family:'Courier Prime', monospace;
+    font-size:0.7rem;
+    color:rgba(28,43,58,0.55);
+    max-width:980px;
+    margin:0 auto;
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:760px){
+    .postcard{grid-template-columns:1fr;}
+    .postcard-left{border-right:none; border-bottom:1px dashed var(--line);}
+    .work-grid{grid-template-columns:1fr;}
+    nav{display:none;}
+    .contact-block{flex-direction:column; align-items:flex-start;}
+  }
+</style>
 </head>
-
 <body>
-  <h1>The Postcard Edit</h1>
-  <h3>Pretty pictures of the mundane by The Postcard Edit</h3>
 
-  <p><strong>Official website of The Postcard Edit</strong>, the original creator using this name since <strong>2013</strong>. This site exists to protect the identity, authorship, and brand history of The Postcard Edit.</p>
+<header>
+  <a class="brand" href="#top">The Postcard Edit
+    <span class="est">EST. 2013 · LONDON</span>
+  </a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#adventures">Adventures</a>
+    <a href="#socials">Socials</a>
+    <a href="#socials">Socials</a>
+  </nav>
+</header>
 
-  <p>You can follow the official Instagram here:<br>
-  <a href="https://www.instagram.com/the_postcard_edit" target="_blank">@the_postcard_edit</a></p>
+<div id="top" class="postcard-wrap">
+  <div class="postcard">
+    <div class="postcard-left">
+      <div>
+        <p class="kicker">LONDON, UK — SINCE 2013</p>
+        <h1>The Postcard Edit</h1>
+        <p class="lede">A personal collection of London cafés, walks, pop-ups, culture and everyday discoveries — collected since 2013.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="#work">Explore adventures</a>
+        <a class="btn" href="#contact">Follow along</a>
+      </div>
+    </div>
+    <div class="postcard-right">
+      <div class="stamp">POSTCARD<br>EDIT<br>LDN</div>
+      <div class="postmark">
+        <p>Postmarked London, UK</p>
+        <div class="to">
+          <p>To whoever's looking for us —</p>
+          <p>collecting London moments since 2013.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <p>This project celebrates the beauty in ordinary moments — the quiet, the overlooked, the mundane made meaningful.</p>
+<section id="about" class="about">
+  <div class="section-head">
+    <span class="num">01</span>
+    <h2>About</h2>
+  </div>
+  <p>The Postcard Edit began in 2013 as a personal collection of places, details and experiences worth remembering. From London cafés and quiet walks to pop-ups, exhibitions and small everyday discoveries, this is where I share the things that catch my eye.</p>
+  <p>Think of it as a living scrapbook of London and beyond: part visual journal, part collection of recommendations, and part record of the places and moments I want to keep.</p>
+</section>
 
-  <p><a href="about.html">Learn more about The Postcard Edit →</a></p>
-  <p><a href="contact.html">Contact →</a></p>
+<section id="adventures">
+  <div class="section-head">
+    <span class="num">02</span>
+    <h2>Adventures</h2>
+  </div>
+  <div class="work-grid">
+    <div class="work-card">
+      <span class="tag">POP-UPS & PLACES</span>
+      <h3>A pop-up worth visiting</h3>
+      <p>A place, event or temporary discovery to remember.</p>
+    </div>
+    <div class="work-card">
+      <span class="tag">CAFÉS</span>
+      <h3>A café to return to</h3>
+      <p>A favourite corner, good coffee or memorable detail.</p>
+    </div>
+    <div class="work-card">
+      <span class="tag">DISCOVERIES</span>
+      <h3>A small London discovery</h3>
+      <p>Photography and notes from everyday life in the city.</p>
+    </div>
+  </div>
+</section>
+
+<section id="socials">
+  <div class="section-head">
+    <span class="num">03</span>
+    <h2>Find me online</h2>
+  </div>
+  <div class="socials">
+      <a href="https://www.instagram.com/the_postcard_edit/" target="_blank" rel="noopener">Instagram ↗</a>
+      <a href="https://thepostcardedit.substack.com/" target="_blank" rel="noopener">Substack ↗</a>
+      <a href="https://www.tiktok.com/@the_postcard_edit" target="_blank" rel="noopener">TikTok ↗</a>
+      <a href="https://www.threads.com/@the_postcard_edit" target="_blank" rel="noopener">Threads ↗</a>
+      <a href="https://x.com/thepostcardedit" target="_blank" rel="noopener">X ↗</a>
+      <a href="https://www.youtube.com/@the_postcard_edit" target="_blank" rel="noopener">Youtube ↗</a>
+    </div>
+</section>
+
+<footer>
+  © 2013–2026 The Postcard Edit · London
+<p>Photography, places and everyday discoveries.</p>
+  </footer>
 
 </body>
 </html>
