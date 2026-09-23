@@ -368,9 +368,13 @@
 </section>
 
 <footer>
-  © 2013–2026 The Postcard Edit | Est. 2013 · London
-<p>Photography, places and everyday discoveries.</p>
-  </footer>
+  © 2013–<span id="current-year"></span> The Postcard Edit | Est. 2013 · London
+  <p>Photography, places and everyday discoveries.</p>
+</footer>
+
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
