@@ -197,58 +197,14 @@
 
   /* ===== Socials ===== */
 
-  .socials{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:12px;
-  }
-
-  .socials a{
-    display:block;
-    padding:14px 16px;
-    border:1px solid var(--ink);
-    text-decoration:none;
-    font-family:'Courier Prime', monospace;
-    font-size:0.75rem;
-    transition:background 0.15s ease, color 0.15s ease;
-  }
-
-  .socials a:hover,
-  .socials a:focus{
-    background:var(--ink);
-    color:var(--paper);
-  }
-
-
-  /* ===== Responsive ===== */
-
-  @media (max-width:900px){
-
-    .blog-grid{
-      grid-template-columns:repeat(2, 1fr);
-    }
-
-  }
-
-  @media (max-width:600px){
-
-    .blog-grid{
-      grid-template-columns:1fr;
-    }
-
-    .socials{
-      grid-template-columns:repeat(2, 1fr);
-    }
-
-  }
-
-  @media (max-width:760px){
-
-    nav{
-      display:none;
-    }
-
-  }
+.socials{
+  display:flex;
+  gap:20px;
+  font-family:'Courier Prime', monospace;
+  font-size:0.85rem;
+}
+.socials a{text-decoration:none; border-bottom:1px solid transparent;}
+.socials a:hover{border-bottom-color:var(--ink);}
 
 
   /* ===== Footer ===== */
