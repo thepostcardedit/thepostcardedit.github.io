@@ -44,6 +44,7 @@
     color:var(--ink);
     font-family:'Fraunces', Georgia, serif;
     line-height:1.5;
+    overflow-x:hidden;
   }
 
   .mono{
@@ -194,12 +195,22 @@
     padding-top:4px;
   }
 
+  @media (max-width:900px){
+    .blog-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:600px){
+    .blog-grid{grid-template-columns:1fr;}
+  }
+
 
   /* ===== Socials ===== */
 
+/* FIXED: was a single-line flex row with no wrap, which pushed
+   the whole page wider than the screen on narrow viewports. */
 .socials{
   display:flex;
-  gap:20px;
+  flex-wrap:wrap;
+  gap:14px 20px;
   font-family:'Courier Prime', monospace;
   font-size:0.85rem;
 }
@@ -217,6 +228,10 @@
     max-width:980px;
     margin:0 auto;
     border-top:1px solid var(--line);
+  }
+
+  @media (max-width:760px){
+    nav{display:none;}
   }
 
 </style>
