@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>The Postcard Edit | Est. 2013 · London Blog</title>
+
+<link rel="canonical" href="https://thepostcardedits.com/blog.html">
+
+<meta name="description" content="Stories, places and discoveries from London and beyond, collected by The Postcard Edit since 2013.">
+
+<meta property="og:title" content="The Postcard Edit | Est. 2013 · London Blog">
+<meta property="og:description" content="Stories, places and discoveries from London and beyond, collected by The Postcard Edit since 2013.">
+<meta property="og:url" content="https://thepostcardedits.com/blog.html">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+  :root{
+    --ink:#1c2b3a;
+    --paper:#f1ead9;
+    --paper-dark:#e6dcc4;
+    --stamp:#a33324;
+    --stamp-dark:#7f2519;
+    --line:rgba(28,43,58,0.18);
+  }
+
+  *{
+    box-sizing:border-box;
+  }
+
+  html{
+    scroll-behavior:smooth;
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Fraunces', Georgia, serif;
+    line-height:1.5;
+  }
+
+  .mono{
+    font-family:'Courier Prime', 'Courier New', monospace;
+  }
+
+  a{
+    color:inherit;
+  }
+
+
+  /* ===== Header ===== */
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:28px 6vw;
+    border-bottom:1px solid var(--line);
+  }
+
+  .brand{
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    font-weight:600;
+    color:var(--ink);
+  }
+
+  .brand .est{
+    font-family:'Courier Prime', monospace;
+    font-size:0.68rem;
+    display:block;
+    color:var(--stamp-dark);
+    margin-top:2px;
+    letter-spacing:0.08em;
+  }
+
+  nav a{
+    font-family:'Courier Prime', monospace;
+    font-size:0.78rem;
+    text-decoration:none;
+    margin-left:28px;
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+  }
+
+  nav a:hover,
+  nav a.active{
+    border-bottom-color:var(--ink);
+  }
+
+
+  /* ===== Sections ===== */
+
+  section{
+    max-width:980px;
+    margin:0 auto;
+    padding:60px 6vw;
+  }
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:34px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+  }
+
+  .section-head .num{
+    font-family:'Courier Prime', monospace;
+    font-size:0.78rem;
+    color:var(--stamp-dark);
+  }
+
+  h2{
+    font-size:1.6rem;
+    margin:0;
+    font-weight:600;
+  }
+
+  .section-intro{
+    max-width:60ch;
+    font-size:1.02rem;
+    margin:-14px 0 36px;
+    color:rgba(28,43,58,0.85);
+  }
+
+
+  /* ===== Blog grid ===== */
+
+  .blog-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:22px;
+  }
+
+  .blog-card{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding:26px 24px;
+    background:transparent;
+    border:1px solid var(--ink);
+    text-decoration:none;
+    color:var(--ink);
+    transition:background 0.15s ease, color 0.15s ease;
+    min-height:250px;
+  }
+
+  .blog-card:hover,
+  .blog-card:focus{
+    background:var(--ink);
+    color:var(--paper);
+  }
+
+  .blog-card .date{
+    font-family:'Courier Prime', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    color:var(--stamp-dark);
+  }
+
+  .blog-card:hover .date,
+  .blog-card:focus .date{
+    color:var(--paper-dark);
+  }
+
+  .blog-card h3{
+    font-size:1.1rem;
+    margin:0;
+    font-weight:600;
+    line-height:1.3;
+  }
+
+  .blog-card p{
+    font-size:0.92rem;
+    margin:0;
+    opacity:0.85;
+  }
+
+  .blog-card .read-more{
+    margin-top:auto;
+    font-family:'Courier Prime', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    padding-top:4px;
+  }
+
+
+  /* ===== Socials ===== */
+
+  .socials{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:12px;
+  }
+
+  .socials a{
+    display:block;
+    padding:14px 16px;
+    border:1px solid var(--ink);
+    text-decoration:none;
+    font-family:'Courier Prime', monospace;
+    font-size:0.75rem;
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+
+  .socials a:hover,
+  .socials a:focus{
+    background:var(--ink);
+    color:var(--paper);
+  }
+
+
+  /* ===== Responsive ===== */
+
+  @media (max-width:900px){
+
+    .blog-grid{
+      grid-template-columns:repeat(2, 1fr);
+    }
+
+  }
+
+  @media (max-width:600px){
+
+    .blog-grid{
+      grid-template-columns:1fr;
+    }
+
+    .socials{
+      grid-template-columns:repeat(2, 1fr);
+    }
+
+  }
+
+  @media (max-width:760px){
+
+    nav{
+      display:none;
+    }
+
+  }
+
+
+  /* ===== Footer ===== */
+
+  footer{
+    padding:26px 6vw 40px;
+    font-family:'Courier Prime', monospace;
+    font-size:0.7rem;
+    color:rgba(28,43,58,0.55);
+    max-width:980px;
+    margin:0 auto;
+    border-top:1px solid var(--line);
+  }
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+  <a class="brand" href="index.html#top">
+    The Postcard Edit
+    <span class="est">EST. 2013 · LONDON</span>
+  </a>
+
+  <nav>
+    <a href="index.html#about">About</a>
+    <a href="index.html#adventures">Adventures</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="index.html#socials">Socials</a>
+  </nav>
+
+</header>
+
+
+<section id="blog">
+
+  <div class="section-head">
+    <span class="num">04</span>
+    <h2>Blog</h2>
+  </div>
+
+  <p class="section-intro">
+    Stories, places and discoveries from London and beyond — collected since 2013. Newest first.
+  </p>
+
+
+  <div class="blog-grid">
+
+
+    <a class="blog-card" href="posts/princess-diana-revenge-dress-sothebys-auction.html">
+
+      <span class="date mono">25 SEP 2026</span>
+
+      <h3>
+        Princess Diana's Revenge Dress: Seeing the Iconic Dress at Sotheby's
+      </h3>
+
+      <p>
+        Seeing Princess Diana's legendary Revenge Dress on display at Sotheby's in London before its upcoming auction.
+      </p>
+
+      <span class="read-more mono">READ MORE →</span>
+
+    </a>
+
+
+  </div>
+
+</section>
+
+
+<section id="socials">
+
+  <div class="section-head">
+    <span class="num">03</span>
+    <h2>Find me online</h2>
+  </div>
+
+  <div class="socials">
+
+    <a href="https://bsky.app/profile/thepostcardedit.bsky.social" target="_blank" rel="noopener">
+      Bluesky ↗
+    </a>
+
+    <a href="https://www.instagram.com/the_postcard_edit/" target="_blank" rel="noopener">
+      Instagram ↗
+    </a>
+
+    <a href="https://www.pinterest.com/the_postcard_edit/" target="_blank" rel="noopener">
+      Pinterest ↗
+    </a>
+
+    <a href="https://thepostcardedit.substack.com/" target="_blank" rel="noopener">
+      Substack ↗
+    </a>
+
+    <a href="https://www.threads.com/@the_postcard_edit" target="_blank" rel="noopener">
+      Threads ↗
+    </a>
+
+    <a href="https://www.tiktok.com/@the_postcard_edit" target="_blank" rel="noopener">
+      TikTok ↗
+    </a>
+
+    <a href="https://x.com/thepostcardedit" target="_blank" rel="noopener">
+      X ↗
+    </a>
+
+    <a href="https://www.youtube.com/@the_postcard_edit" target="_blank" rel="noopener">
+      Youtube ↗
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  © 2013–<span id="current-year"></span> The Postcard Edit | Est. 2013 · London
+
+  <p>Photography, places and everyday discoveries.</p>
+
+</footer>
+
+
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+
+</body>
+</html>
