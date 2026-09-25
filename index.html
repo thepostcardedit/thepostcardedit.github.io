@@ -53,6 +53,7 @@
     color:var(--ink);
     font-family:'Fraunces', Georgia, serif;
     line-height:1.5;
+    overflow-x:hidden;
   }
   .mono{
     font-family:'Courier Prime', 'Courier New', monospace;
@@ -274,9 +275,13 @@
     text-decoration:none;
     border-bottom:1px solid var(--ink);
   }
+
+  /* Socials — FIXED: was a single-line flex row with no wrap,
+     which pushed the page wider than the screen on narrow viewports. */
   .socials{
     display:flex;
-    gap:20px;
+    flex-wrap:wrap;
+    gap:14px 20px;
     font-family:'Courier Prime', monospace;
     font-size:0.85rem;
   }
