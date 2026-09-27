@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+User-agent: PetalBot
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
 Sitemap: https://thepostcardedits.com/sitemap.xml
