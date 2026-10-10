@@ -34,6 +34,38 @@
   ]
 }
 </script>
+<script>
+  fetch('/blog.html')
+    .then(response => response.text())
+    .then(text => {
+      const doc = new DOMParser().parseFromString(text, 'text/html');
+      const posts = doc.querySelectorAll('.blog-card');
+      const container = document.getElementById('latest-posts');
+
+      Array.from(posts).slice(0, 3).forEach(post => {
+        const card = document.createElement('a');
+        card.className = 'work-card';
+        card.href = post.getAttribute('href');
+
+        const date = post.querySelector('.date');
+        const title = post.querySelector('h3');
+        const description = post.querySelector('p');
+
+        card.innerHTML = `
+          ${date ? `<span class="tag">${date.textContent.trim()}</span>` : ''}
+          ${title ? `<h3>${title.innerHTML}</h3>` : ''}
+          ${description ? `<p>${description.innerHTML}</p>` : ''}
+        `;
+
+        container.appendChild(card);
+      });
+    })
+    .catch(() => {
+      document.getElementById('latest-posts').innerHTML =
+        '<p>Latest posts are available on the blog.</p>';
+    });
+
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
@@ -382,6 +414,22 @@
   </div>
 </section>
 
+
+<section id="blog">
+  <div class="section-head">
+    <span class="num">04</span>
+    <h2>Blog</h2>
+  </div>
+
+  <div id="latest-posts" class="work-grid">
+    <!-- Latest blog posts are loaded automatically from blog.html -->
+  </div>
+
+  <p style="margin-top:24px;">
+    <a class="btn" href="/blog.html">View all blog posts →</a>
+  </p>
+</section>
+
 <section id="socials">
   <div class="section-head">
     <span class="num">03</span>
@@ -399,21 +447,6 @@
     </div>
 </section>
 
-<section id="blog">
-  <div class="section-head">
-    <span class="num">04</span>
-    <h2>Blog</h2>
-  </div>
-
-  <div id="latest-posts" class="work-grid">
-    <!-- Latest blog posts are loaded automatically from blog.html -->
-  </div>
-
-  <p style="margin-top:24px;">
-    <a class="btn" href="/blog.html">View all blog posts →</a>
-  </p>
-</section>
-
 <footer>
   © 2013–<span id="current-year"></span> The Postcard Edit | Est. 2013 · London
   <p>Photography, places and everyday discoveries.</p>
@@ -421,32 +454,6 @@
 
 <script>
   document.getElementById('current-year').textContent = new Date().getFullYear();
-
-  fetch('/blog.html')
-    .then(response => response.text())
-    .then(text => {
-      const doc = new DOMParser().parseFromString(text, 'text/html');
-      const posts = doc.querySelectorAll('.blog-card');
-      const container = document.getElementById('latest-posts');
-
-      Array.from(posts).slice(0, 3).forEach(post => {
-        const card = document.createElement('a');
-        card.className = 'work-card';
-        card.href = post.getAttribute('href');
-
-        const date = post.querySelector('.date');
-        const title = post.querySelector('h3');
-        const description = post.querySelector('p');
-
-        card.innerHTML = `
-          ${date ? `<span class="tag">${date.textContent.trim()}</span>` : ''}
-          ${title ? `<h3>${title.innerHTML}</h3>` : ''}
-          ${description ? `<p>${description.innerHTML}</p>` : ''}
-        `;
-
-        container.appendChild(card);
-      });
-    });
 </script>
 
 </body>
