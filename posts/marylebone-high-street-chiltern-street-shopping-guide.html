@@ -332,7 +332,79 @@
   }
 
 
+
+
+  /* ===== Random blog recommendations ===== */
+
+  .random-posts{
+    max-width:980px;
+    margin:34px auto 0;
+    padding:0 6vw;
+  }
+
+  .random-posts .blog-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:22px;
+  }
+
+  .random-posts .blog-card{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding:26px 24px;
+    background:transparent;
+    border:1px solid var(--ink);
+    text-decoration:none;
+    color:var(--ink);
+    transition:background 0.15s ease, color 0.15s ease;
+    min-height:250px;
+  }
+
+  .random-posts .blog-card:hover,
+  .random-posts .blog-card:focus{
+    background:var(--ink);
+    color:var(--paper);
+  }
+
+  .random-posts .blog-card .date{
+    font-family:'Courier Prime', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    color:var(--stamp-dark);
+  }
+
+  .random-posts .blog-card:hover .date,
+  .random-posts .blog-card:focus .date{
+    color:var(--paper-dark);
+  }
+
+  .random-posts .blog-card h3{
+    font-size:1.1rem;
+    margin:0;
+    font-weight:600;
+    line-height:1.3;
+  }
+
+  .random-posts .blog-card p{
+    font-size:0.92rem;
+    margin:0;
+    opacity:0.85;
+  }
+
+  .random-posts .blog-card .read-more{
+    margin-top:auto;
+    font-family:'Courier Prime', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    padding-top:4px;
+  }
+
   /* ===== Responsive ===== */
+
+  @media (max-width:900px){
+    .random-posts .blog-grid{grid-template-columns:repeat(2, 1fr);}
+  }
 
   @media (max-width:760px){
 
@@ -344,6 +416,10 @@
       font-size:2.2rem;
     }
 
+  }
+
+  @media (max-width:600px){
+    .random-posts .blog-grid{grid-template-columns:1fr;}
   }
 
   @media (max-width:600px){
@@ -425,7 +501,7 @@
     </p>
 
     <p>
-      Autumn and Winter!! As they say, there is a fine line, especially at this time of the year when London is a mix of Halloween, Christmas, and everything in between. It’s so much fun to capture the vibe!!
+      ... but instead of love and hate it's Autumn and Winter!! As they say, there is a fine line, especially at this time of the year when London is a mix of Halloween, Christmas, and everything in between. It’s so much fun to capture the vibe!!
     </p>
 
     <p>
@@ -462,6 +538,10 @@
     <span class="tag">LONDON SHOPPING</span>
     <span class="tag">SEASONAL SHOPFRONTS</span>
 
+  </div>
+
+  <div class="random-posts">
+    <div id="random-posts" class="blog-grid" aria-live="polite"></div>
   </div>
 
   <div class="share">
@@ -538,6 +618,70 @@
 
 
 </article>
+
+
+<script>
+  fetch('/blog.html')
+    .then(response => {
+      if (!response.ok) throw new Error('Could not load blog posts');
+      return response.text();
+    })
+    .then(text => {
+      const doc = new DOMParser().parseFromString(text, 'text/html');
+      const currentPath = window.location.pathname.replace(/\/$/, '');
+      const posts = Array.from(doc.querySelectorAll('.blog-card')).filter(post => {
+        const href = post.getAttribute('href');
+        if (!href) return false;
+        const postPath = new URL(href, window.location.origin + '/blog.html').pathname.replace(/\/$/, '');
+        return postPath !== currentPath;
+      });
+
+      // Shuffle the available posts, then show up to three.
+      for (let i = posts.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [posts[i], posts[j]] = [posts[j], posts[i]];
+      }
+
+      const container = document.getElementById('random-posts');
+      posts.slice(0, 3).forEach(post => {
+        const card = document.createElement('a');
+        card.className = 'blog-card';
+        card.href = new URL(post.getAttribute('href'), window.location.origin + '/blog.html').href;
+
+        const date = post.querySelector('.date');
+        const title = post.querySelector('h3');
+        const description = post.querySelector('p');
+        const readMore = post.querySelector('.read-more');
+
+        if (date) {
+          const dateEl = document.createElement('span');
+          dateEl.className = 'date mono';
+          dateEl.textContent = date.textContent.trim();
+          card.appendChild(dateEl);
+        }
+        if (title) {
+          const titleEl = document.createElement('h3');
+          titleEl.textContent = title.textContent.trim();
+          card.appendChild(titleEl);
+        }
+        if (description) {
+          const descriptionEl = document.createElement('p');
+          descriptionEl.textContent = description.textContent.trim();
+          card.appendChild(descriptionEl);
+        }
+        const readMoreEl = document.createElement('span');
+        readMoreEl.className = 'read-more mono';
+        readMoreEl.textContent = readMore ? readMore.textContent.trim() : 'READ MORE →';
+        card.appendChild(readMoreEl);
+        container.appendChild(card);
+      });
+
+    })
+    .catch(() => {
+      // Keep the recommendation area empty if the blog list cannot be loaded.
+    });
+</script>
+
 
 
 <section id="socials" class="socials-section">
