@@ -471,6 +471,9 @@
   </div>
 
 
+  <div id="random-posts" class="blog-grid"></div>
+
+
   <div class="tags">
 
     <span class="tag">PRINCESS DIANA</span>
@@ -635,6 +638,46 @@
 
 <script async src="//www.instagram.com/embed.js"></script>
 
+<script>
+(async function () {
+  const container = document.getElementById('random-posts');
+  if (!container) return;
+
+  try {
+    const response = await fetch('/blog.html');
+    if (!response.ok) throw new Error('Could not load blog posts');
+
+    const html = await response.text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+
+    const posts = Array.from(doc.querySelectorAll('.blog-card'))
+      .filter(post => {
+        const href = post.getAttribute('href');
+        if (!href) return false;
+
+        const postPath = new URL(href, window.location.origin).pathname
+          .replace(/\/$/, '');
+
+        return postPath !== currentPath;
+      });
+
+    // Shuffle the posts randomly.
+    for (let i = posts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [posts[i], posts[j]] = [posts[j], posts[i]];
+    }
+
+    // Display up to three cards, using the existing blog-card markup.
+    posts.slice(0, 3).forEach(post => {
+      container.appendChild(post.cloneNode(true));
+    });
+  } catch (error) {
+    console.error('Random blog posts could not be loaded:', error);
+  }
+})();
+</script>
 
 </body>
 </html>
