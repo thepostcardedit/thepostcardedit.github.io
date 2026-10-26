@@ -144,11 +144,13 @@
   </main>
 
   <!-- Shared footer elements -->
-  <div data-footer-social></div>
-  <div data-footer-copyright></div>
+<div data-footer-include="/includes/footer-social.html"></div>
 
-  <script src="/js/header.js"></script>
-  <script src="/js/footer.js"></script>
+<div data-footer-include="/includes/footer-copyright.html"></div>
+
+<script src="/js/header.js" defer></script>
+<script src="/js/footer.js" defer></script>
+<script async src="https://www.instagram.com/embed.js"></script>
 
 </body>
 </html>
