@@ -1,20 +1,280 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact – The Postcard Edit</title>
-  <meta name="description" content="Contact The Postcard Edit — official creator since 2013.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact & Social Media | The Postcard Edit | Est. 2013</title>
+  <meta name="description" content="Find The Postcard Edit online. Follow my London discoveries, photographs, places and everyday adventures across social media.">
+  <link rel="canonical" href="https://thepostcardedits.com/contact.html">
+
+  <meta property="og:title" content="Contact & Social Media | The Postcard Edit | Est. 2013">
+  <meta property="og:description" content="Find The Postcard Edit online and follow my photographs, London discoveries and everyday adventures.">
+  <meta property="og:url" content="https://thepostcardedits.com/contact.html">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact & Social Media | The Postcard Edit | Est. 2013">
+  <meta name="twitter:description" content="Find The Postcard Edit online and follow my photographs, London discoveries and everyday adventures.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://thepostcardedits.com/#organization",
+    "name": "The Postcard Edit",
+    "alternateName": "The Postcard Edit",
+    "description": "London walks, cafés, places, pop-ups, culture and everyday discoveries — collected since 2013.",
+    "url": "https://thepostcardedits.com/",
+    "foundingDate": "2013",
+    "sameAs": [
+      "https://www.instagram.com/the_postcard_edit/",
+      "https://bsky.app/profile/thepostcardedit.bsky.social",
+      "https://www.pinterest.com/the_postcard_edit/",
+      "https://thepostcardedit.substack.com/",
+      "https://substack.com/@thepostcardedit",
+      "https://www.threads.com/@the_postcard_edit",
+      "https://www.tiktok.com/@the_postcard_edit",
+      "https://x.com/thepostcardedit",
+      "https://www.youtube.com/@the_postcard_edit"
+    ]
+  }
+  </script>
+
+  <style>
+    .page-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 6vw 80px;
+    }
+
+    .contact-page {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .article-header {
+      margin: 0 0 42px;
+    }
+
+    .eyebrow {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+    }
+
+    .contact-page h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.12;
+      margin: 0 0 20px;
+      font-weight: 600;
+    }
+
+    .article-intro {
+      max-width: 700px;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .social-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 155px;
+      padding: 24px;
+      border: 1px solid rgba(0, 0, 0, 0.16);
+      color: inherit;
+      text-decoration: none;
+      background: transparent;
+      transition: background-color 180ms ease, border-color 180ms ease;
+    }
+
+    .social-card:hover,
+    .social-card:focus-visible {
+      background: rgba(0, 0, 0, 0.035);
+      border-color: rgba(0, 0, 0, 0.45);
+    }
+
+    .social-card:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+
+    .social-card h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      font-weight: 600;
+      margin: 0 0 12px;
+    }
+
+    .social-card p {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .social-card .card-link {
+      display: block;
+      margin-top: 24px;
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 760px) {
+      .social-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .social-card {
+        min-height: 145px;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-content {
+        padding-top: 45px;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .social-card {
+        min-height: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .social-card {
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
-<body style="font-family:Arial, sans-serif; padding:40px; max-width:700px; margin:auto;">
+<body>
 
-<h1>Contact</h1>
+  <!-- Shared site header -->
+  <div id="site-header"></div>
 
-<p>You can reach the official creator of <strong>The Postcard Edit</strong> through Instagram:</p>
+  <main class="page-content">
+    <article class="contact-page">
 
-<p><a href="https://www.instagram.com/the_postcard_edit" target="_blank">@the_postcard_edit</a></p>
+      <header class="article-header">
+        <p class="eyebrow">EST. 2013 · LONDON</p>
+        <h1>Find The Postcard Edit</h1>
+        <p class="article-intro">Photographs, London discoveries, places and everyday adventures. Find me across the internet below.</p>
+      </header>
 
-<p><a href="index.html">← Back to Home</a></p>
+      <section class="social-grid" aria-label="The Postcard Edit social media profiles">
+
+        <a class="social-card" href="https://www.instagram.com/the_postcard_edit/" target="_blank" rel="noopener noreferrer">
+          <div>
+            <h2>Instagram</h2>
+            <p>Photographs, places and everyday discoveries.</p>
+          </div>
+          <span class="card-link">@the_postcard_edit ↗</span>
+        </a>
+
+        <a class="social-card" href="https://bsky.app/profile/thepostcardedit.bsky.social" target="_blank" rel="noopener noreferrer">
+          <div>
+            <h2>Bluesky</h2>
+            <p>Find The Postcard Edit on Bluesky.</p>
+          </div>
+          <span class="card-link">Follow along ↗</span>
+        </a>
+
+        <a class="social-card" href="https://www.pinterest.com/the_postcard_edit/" target="_blank" rel="noopener noreferrer">
+          <div>
+            <h2>Pinterest</h2>
+            <p>Visual inspiration and things worth saving.</p>
+          </div>
+          <span class="card-link">Explore the boards ↗</span>
+        </a>
+
+        <a class="social-card" href="https://thepostcardedit.substack.com/" target="_blank" rel="noopener noreferrer">
+          <div>
+            <h2>Substack</h2>
+            <p>Read The Postcard Edit newsletter.</p>
+          </div>
+          <span class="card-link">Read the newsletter ↗</span>
+        </a>
+
+        <a class="social-card" href="https://substack.com/@thepostcardedit" target="_blank" rel="noopener noreferrer">
+          <div>
+            <h2>Substack Profile</h2>
+            <p>Visit my Substack profile.</p>
+          </div>
+          <span class="card-link">View profile ↗</span>
+        </a>
+
+        <a class="social-card" href="https://www.threads.com/@the_postcard_edit" target="_blank" rel="noopener noreferrer">
+          <div>
+            <h2>Threads</h2>
+            <p>More from The Postcard Edit.</p>
+          </div>
+          <span class="card-link">@the_postcard_edit ↗</span>
+        </a>
+
+        <a class="social-card" href="https://www.tiktok.com/@the_postcard_edit" target="_blank" rel="noopener noreferrer">
+          <div>
+            <h2>TikTok</h2>
+            <p>Discoveries and moments in motion.</p>
+          </div>
+          <span class="card-link">@the_postcard_edit ↗</span>
+        </a>
+
+        <a class="social-card" href="https://x.com/thepostcardedit" target="_blank" rel="noopener noreferrer">
+          <div>
+            <h2>X</h2>
+            <p>Find The Postcard Edit on X.</p>
+          </div>
+          <span class="card-link">@thepostcardedit ↗</span>
+        </a>
+
+        <a class="social-card" href="https://www.youtube.com/@the_postcard_edit" target="_blank" rel="noopener noreferrer">
+          <div>
+            <h2>YouTube</h2>
+            <p>Watch The Postcard Edit on YouTube.</p>
+          </div>
+          <span class="card-link">Visit the channel ↗</span>
+        </a>
+
+      </section>
+
+    </article>
+  </main>
+
+  <!-- Shared footer elements -->
+  <div data-footer-include="/includes/footer-social.html"></div>
+
+  <div data-footer-include="/includes/footer-copyright.html"></div>
+
+  <script src="/js/header.js" defer></script>
+  <script src="/js/footer.js" defer></script>
 
 </body>
 </html>
+```
