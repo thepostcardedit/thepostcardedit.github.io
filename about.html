@@ -1,18 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About | The Postcard Edit</title>
-  <meta name="description" content="The Postcard Edit is an independent visual journal founded in 2013, capturing pretty pictures of the mundane, London discoveries and everyday moments.">
+  <title>About The Postcard Edit | Est. 2013</title>
+  <meta name="description" content="The Postcard Edit is a London-based creative project documenting everyday beauty, places and discoveries since 2013.">
   <link rel="canonical" href="https://thepostcardedits.com/about.html">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="About | The Postcard Edit">
-  <meta property="og:description" content="An independent visual journal documenting the beauty in everyday life since 2013.">
+  <meta property="og:title" content="About The Postcard Edit | Est. 2013">
+  <meta property="og:description" content="The Postcard Edit is a London-based creative project documenting everyday beauty, places and discoveries since 2013.">
   <meta property="og:url" content="https://thepostcardedits.com/about.html">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About The Postcard Edit | Est. 2013">
+  <meta name="twitter:description" content="The Postcard Edit is a London-based creative project documenting everyday beauty, places and discoveries since 2013.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
 
   <script type="application/ld+json">
   {
@@ -38,16 +49,73 @@
   }
   </script>
 
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/footer.css">
+  <style>
+    .page-content {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 60px 6vw 80px;
+    }
+
+    .about-page {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .article-header {
+      margin: 0 0 42px;
+    }
+
+    .eyebrow {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+    }
+
+    .about-page h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.12;
+      margin: 0 0 20px;
+      font-weight: 600;
+    }
+
+    .article-intro {
+      font-size: 1.35rem;
+      line-height: 1.45;
+    }
+
+    .article-body {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .article-body p {
+      font-size: 1.03rem;
+      margin: 0 0 1.5em;
+    }
+
+    .article-body h2 {
+      font-size: 1.3rem;
+      margin: 2em 0 0.8em;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .page-content {
+        padding-top: 45px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- Shared site header -->
   <div id="site-header"></div>
 
   <main class="page-content">
     <article class="about-page">
+
       <header class="article-header">
         <p class="eyebrow">EST. 2013 · LONDON</p>
         <h1>About The Postcard Edit</h1>
@@ -57,7 +125,7 @@
       <div class="article-body">
         <p><strong>The Postcard Edit</strong> began in 2013 as a visual project documenting the beauty in everyday life: the quiet, the ordinary and the seemingly mundane. Over time, it grew into a recognisable creative identity, with a distinct aesthetic centred on simplicity, stillness and the details that might otherwise go unnoticed.</p>
 
-        <p>Look a little closer.</p>
+        <p>The idea has always been to look a little closer.</p>
 
         <h2>The Original Postcard Edit</h2>
 
@@ -67,4 +135,20 @@
 
         <p>You can find my photographs, London discoveries and everyday adventures on Instagram.</p>
 
-        <p><a
+        <p>
+          <a href="https://www.instagram.com/the_postcard_edit/" target="_blank" rel="noopener noreferrer">@the_postcard_edit</a>
+        </p>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Shared footer elements -->
+  <div data-footer-social></div>
+  <div data-footer-copyright></div>
+
+  <script src="/js/header.js"></script>
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>
