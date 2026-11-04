@@ -1,460 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="ecXB8mglRnLdEGzWL00Z638dfsIDFJ7vV5syBnZp9Zk" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Postcard Edit | Est. 2013</title>
-<link rel="icon" type="image/png" href="/the-postcard-edit-favicon.png">
-<link rel="canonical" href="https://thepostcardedits.com/">
-<meta name="description" content="The Postcard Edit is a London-based hobby project, established in 2013, sharing photography, cafés, walks, pop-ups, culture and everyday London discoveries.">
-<meta property="og:title" content="The Postcard Edit | Est. 2013">
-<meta property="og:description" content="Photography, cafés, walks, pop-ups, culture and everyday discoveries from London.">
-<meta property="og:url" content="https://thepostcardedits.com/">
-<meta property="og:type" content="website">
+  <meta name="google-site-verification" content="ecXB8mglRnLdEGzWL00Z638dfsIDFJ7vV5syBnZp9Zk" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The Postcard Edit | Est. 2013</title>
+  <link rel="icon" type="image/png" href="/the-postcard-edit-favicon.png">
+  <meta name="description" content="The Postcard Edit is a London-based hobby project, established in 2013, sharing photography, cafés, walks, pop-ups, culture and everyday London discoveries.">
+  <link rel="canonical" href="https://thepostcardedits.com/">
+
+  <meta property="og:title" content="The Postcard Edit | Est. 2013">
+  <meta property="og:description" content="Photography, cafés, walks, pop-ups, culture and everyday discoveries from London.">
+  <meta property="og:url" content="https://thepostcardedits.com/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Postcard Edit | Est. 2013">
+  <meta name="twitter:description" content="Photography, cafés, walks, pop-ups, culture and everyday discoveries from London.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "The Postcard Edit",
-  "alternateName": "The Postcard Edit",
-  "description": "London walks, cafés, places, pop-ups, culture and everyday discoveries — collected since 2013.",
-  "url": "https://thepostcardedits.com/",
-  "foundingDate": "2013",
-  "sameAs": [
-    "https://www.instagram.com/the_postcard_edit/",
-    "https://bsky.app/profile/thepostcardedit.bsky.social",
-    "https://www.pinterest.com/the_postcard_edit/",
-    "https://thepostcardedit.substack.com/",
-    "https://substack.com/@thepostcardedit",
-    "https://www.threads.com/@the_postcard_edit",
-    "https://www.tiktok.com/@the_postcard_edit",
-    "https://x.com/thepostcardedit",
-    "https://www.youtube.com/@the_postcard_edit"
-  ]
-}
-</script>
-<script>
-  fetch('/blog.html')
-    .then(response => response.text())
-    .then(text => {
-      const doc = new DOMParser().parseFromString(text, 'text/html');
-      const posts = doc.querySelectorAll('.blog-card');
-      const container = document.getElementById('latest-posts');
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://thepostcardedits.com/#organization",
+    "name": "The Postcard Edit",
+    "alternateName": "The Postcard Edit",
+    "description": "London walks, cafés, places, pop-ups, culture and everyday discoveries — collected since 2013.",
+    "url": "https://thepostcardedits.com/",
+    "foundingDate": "2013",
+    "sameAs": [
+      "https://www.instagram.com/the_postcard_edit/",
+      "https://bsky.app/profile/thepostcardedit.bsky.social",
+      "https://www.pinterest.com/the_postcard_edit/",
+      "https://thepostcardedit.substack.com/",
+      "https://substack.com/@thepostcardedit",
+      "https://www.threads.com/@the_postcard_edit",
+      "https://www.tiktok.com/@the_postcard_edit",
+      "https://x.com/thepostcardedit",
+      "https://www.youtube.com/@the_postcard_edit"
+    ]
+  }
+  </script>
 
-      Array.from(posts).slice(0, 3).forEach(post => {
-        const card = document.createElement('a');
-        card.className = 'work-card';
-        card.href = post.getAttribute('href');
+  <style>
+    .page-content {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 60px 6vw 80px;
+    }
 
-        const date = post.querySelector('.date');
-        const title = post.querySelector('h3');
-        const description = post.querySelector('p');
+    .home-page {
+      max-width: 760px;
+      margin: 0 auto;
+    }
 
-        card.innerHTML = `
-          ${date ? `<span class="tag">${date.textContent.trim()}</span>` : ''}
-          ${title ? `<h3>${title.innerHTML}</h3>` : ''}
-          ${description ? `<p>${description.innerHTML}</p>` : ''}
-        `;
+    .article-header {
+      margin: 0 0 42px;
+    }
 
-        container.appendChild(card);
-      });
-    })
-    .catch(() => {
-      document.getElementById('latest-posts').innerHTML =
-        '<p>Latest posts are available on the blog.</p>';
-    });
+    .home-page h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.12;
+      margin: 0 0 20px;
+      font-weight: 600;
+    }
 
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#1c2b3a;
-    --paper:#f1ead9;
-    --paper-dark:#e6dcc4;
-    --stamp:#a33324;
-    --stamp-dark:#7f2519;
-    --line: rgba(28,43,58,0.18);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Fraunces', Georgia, serif;
-    line-height:1.5;
-    overflow-x:hidden;
-  }
-  .mono{
-    font-family:'Courier Prime', 'Courier New', monospace;
-  }
-  a{color:inherit;}
+    .article-intro {
+      font-size: 1.35rem;
+      line-height: 1.45;
+      margin: 0;
+    }
 
-  /* ===== Header ===== */
-  header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:28px 6vw;
-    border-bottom:1px solid var(--line);
-  }
-  .brand{
-    font-size:1.15rem;
-    letter-spacing:0.02em;
-    text-decoration:none;
-    font-weight:600;
-    color:var(--ink);
-  }
-  .brand .est{
-    font-family:'Courier Prime', monospace;
-    font-size:0.68rem;
-    display:block;
-    color:var(--stamp-dark);
-    margin-top:2px;
-    letter-spacing:0.08em;
-  }
-  nav a{
-    font-family:'Courier Prime', monospace;
-    font-size:0.78rem;
-    text-decoration:none;
-    margin-left:28px;
-    border-bottom:1px solid transparent;
-    padding-bottom:2px;
-  }
-  nav a:hover{border-bottom-color:var(--ink);}
+    .latest-posts {
+      padding-top: 30px;
+      border-top: 1px solid var(--line, rgba(28, 43, 58, 0.18));
+    }
 
-  /* ===== Hero: postcard layout ===== */
-  .postcard-wrap{
-    max-width:980px;
-    margin:8vh auto 6vh;
-    padding:0 6vw;
-  }
-  .postcard{
-    background:var(--paper-dark);
-    border:1px solid var(--line);
-    border-radius:2px;
-    box-shadow: 6px 6px 0 rgba(28,43,58,0.06);
-    display:grid;
-    grid-template-columns: 1.15fr 1fr;
-    min-height:420px;
-  }
-  .postcard-left{
-    padding:44px 40px;
-    border-right:1px dashed var(--line);
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-  }
-  .kicker{
-    font-family:'Courier Prime', monospace;
-    font-size:0.75rem;
-    letter-spacing:0.06em;
-    color:var(--stamp-dark);
-    margin:0 0 18px;
-  }
-  h1{
-    font-size:clamp(2.1rem, 4.6vw, 3.4rem);
-    line-height:1.05;
-    margin:0 0 18px;
-    font-weight:600;
-    max-width:14ch;
-  }
-  .lede{
-    font-size:1.05rem;
-    max-width:42ch;
-    margin:0 0 30px;
-    color:rgba(28,43,58,0.85);
-  }
-  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
-  .btn{
-    display:inline-block;
-    font-family:'Courier Prime', monospace;
-    font-size:0.82rem;
-    padding:12px 20px;
-    border:1px solid var(--ink);
-    text-decoration:none;
-    color:var(--ink);
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-  .btn.primary{
-    background:var(--stamp);
-    border-color:var(--stamp);
-    color:var(--paper);
-  }
-  .btn.primary:hover{background:var(--stamp-dark); border-color:var(--stamp-dark);}
-  .btn:not(.primary):hover{background:var(--ink); color:var(--paper);}
+    .latest-posts h2 {
+      font-size: 1.3rem;
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
 
-  .postcard-right{
-    padding:40px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    position:relative;
-  }
-  .stamp{
-    align-self:flex-end;
-    width:76px;
-    height:92px;
-    border:2px dotted rgba(28,43,58,0.4);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    font-family:'Courier Prime', monospace;
-    font-size:0.62rem;
-    color:var(--stamp-dark);
-    padding:8px;
-    transform: rotate(3deg);
-  }
-  .postmark{
-    font-family:'Courier Prime', monospace;
-    font-size:0.72rem;
-    color:rgba(28,43,58,0.55);
-    line-height:1.7;
-  }
-  .postmark .to{
-    margin-top:auto;
-    border-top:1px solid var(--line);
-    padding-top:14px;
-  }
+    /* Cards are created by the script below from blog.html */
+    #latest-posts .work-card {
+      display: block;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line, rgba(28, 43, 58, 0.18));
+      text-decoration: none;
+    }
 
-  /* ===== Sections ===== */
-  section{
-    max-width:980px;
-    margin:0 auto;
-    padding:60px 6vw;
-  }
-  .section-head{
-    display:flex;
-    align-items:baseline;
-    gap:16px;
-    margin-bottom:34px;
-    border-bottom:1px solid var(--line);
-    padding-bottom:14px;
-  }
-  .section-head .num{
-    font-family:'Courier Prime', monospace;
-    font-size:0.78rem;
-    color:var(--stamp-dark);
-  }
-  h2{
-    font-size:1.6rem;
-    margin:0;
-    font-weight:600;
-  }
+    #latest-posts .work-card .tag {
+      display: block;
+      padding: 0;
+      border: 0;
+      margin: 0 0 8px;
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+    }
 
-  /* About */
-  .about p{
-    max-width:60ch;
-    font-size:1.05rem;
-  }
+    #latest-posts .work-card h3 {
+      font-size: 1.2rem;
+      line-height: 1.3;
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
 
-  /* Work grid */
-  .work-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  .work-card{
-    background:var(--paper);
-    padding:26px 24px;
-  }
-  .work-card .tag{
-    font-family:'Courier Prime', monospace;
-    font-size:0.7rem;
-    color:var(--stamp-dark);
-    display:block;
-    margin-bottom:10px;
-  }
-  .work-card h3{
-    font-size:1.05rem;
-    margin:0 0 8px;
-    font-weight:600;
-  }
-  .work-card p{
-    font-size:0.92rem;
-    margin:0;
-    color:rgba(28,43,58,0.8);
-  }
+    #latest-posts .work-card:hover h3,
+    #latest-posts .work-card:focus h3 {
+      text-decoration: underline;
+    }
 
-  /* Collabs */
-  .collab-list{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px 28px;
-    font-family:'Courier Prime', monospace;
-    font-size:0.95rem;
-  }
-  .collab-list span{
-    padding-bottom:4px;
-    border-bottom:1px solid var(--line);
-  }
+    #latest-posts .work-card p {
+      font-size: 1rem;
+      margin: 0;
+    }
 
-  /* Contact */
-  .contact-block{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    flex-wrap:wrap;
-    gap:24px;
-  }
-  .contact-block a.email{
-    font-size:1.4rem;
-    text-decoration:none;
-    border-bottom:1px solid var(--ink);
-  }
+    .all-posts {
+      margin: 28px 0 0;
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.82rem;
+    }
 
-  /* Socials — FIXED: was a single-line flex row with no wrap,
-     which pushed the page wider than the screen on narrow viewports. */
-  .socials{
-    display:flex;
-    flex-wrap:wrap;
-    gap:14px 20px;
-    font-family:'Courier Prime', monospace;
-    font-size:0.85rem;
-  }
-  .socials a{text-decoration:none; border-bottom:1px solid transparent;}
-  .socials a:hover{border-bottom-color:var(--ink);}
-
-  footer{
-    padding:26px 6vw 40px;
-    font-family:'Courier Prime', monospace;
-    font-size:0.7rem;
-    color:rgba(28,43,58,0.55);
-    max-width:980px;
-    margin:0 auto;
-    border-top:1px solid var(--line);
-  }
-
-  @media (max-width:760px){
-    .postcard{grid-template-columns:1fr;}
-    .postcard-left{border-right:none; border-bottom:1px dashed var(--line);}
-    .work-grid{grid-template-columns:1fr;}
-    nav{display:none;}
-    .contact-block{flex-direction:column; align-items:flex-start;}
-  }
-</style>
+    @media (max-width: 600px) {
+      .page-content {
+        padding-top: 45px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <a class="brand" href="#top">The Postcard Edit
-    <span class="est">EST. 2013 · LONDON</span>
-  </a>
-<nav>
-  <a href="#about">About</a>
-  <a href="#adventures">Adventures</a>
-  <a href="#socials">Socials</a>
-  <a href="/blog.html">Blog</a>
-</nav>
-</header>
+  <!-- Shared site header -->
+  <div id="site-header"></div>
 
-<div id="top" class="postcard-wrap">
-  <div class="postcard">
-    <div class="postcard-left">
-      <div>
-        <p class="kicker">LONDON, UK — SINCE 2013</p>
+  <main class="page-content">
+    <div class="home-page">
+
+      <header class="article-header">
         <h1>The Postcard Edit</h1>
-        <p class="lede">A personal collection of London cafés, walks, pop-ups, culture and everyday discoveries | Est. 2013</p>
-      </div>
-      <div class="cta-row">
-        <a class="btn primary" href="#adventures">Explore adventures</a>
-        <a class="btn" href="#socials">Follow along</a>
-      </div>
-    </div>
-    <div class="postcard-right">
-      <div class="stamp">POSTCARD<br>EDIT<br>LDN</div>
-      <div class="postmark">
-        <p>Postmarked London, UK</p>
-        <div class="to">
-          <p>To whoever's looking for us —</p>
-          <p>collecting London moments since 2013.</p>
+        <p class="article-intro">A personal collection of London cafés, walks, pop-ups, culture and everyday discoveries | Est. 2013</p>
+      </header>
+
+      <section class="latest-posts">
+
+        <h2>Latest posts</h2>
+
+        <div id="latest-posts">
+          <!-- Latest blog posts are loaded automatically from blog.html -->
         </div>
-      </div>
+
+        <p class="all-posts"><a href="/blog.html">View all blog posts →</a></p>
+
+      </section>
+
     </div>
-  </div>
-</div>
+  </main>
 
-<section id="about" class="about">
-  <div class="section-head">
-    <span class="num">01</span>
-    <h2>About</h2>
-  </div>
-  <p>The Postcard Edit began on Instagram in 2013 as a personal collection of places, details and experiences worth remembering. From London cafés and quiet walks to pop-ups, exhibitions and small everyday discoveries, this is where I share the things that catch my eye.</p>
-  <p>Think of it as a living scrapbook of London and beyond: part visual journal, part collection of recommendations, and part record of the places and moments I want to keep.</p>
-  <p>I am mostly on Instagram. All my posts are curated, scheduled, and latergrammed. I cross-post to other social platforms!</p>
-</section>
+  <!-- Shared footer elements -->
+  <div data-footer-include="/includes/footer-social.html"></div>
 
-<section id="adventures">
-  <div class="section-head">
-    <span class="num">02</span>
-    <h2>Adventures</h2>
-  </div>
-  <div class="work-grid">
-    <div class="work-card">
-      <span class="tag">POP-UPS & PLACES</span>
-      <h3>A pop-up worth visiting</h3>
-      <p>A place, event or temporary discovery to remember.</p>
-    </div>
-    <div class="work-card">
-      <span class="tag">CAFÉS</span>
-      <h3>A café to return to</h3>
-      <p>A favourite corner, good coffee or memorable detail.</p>
-    </div>
-    <div class="work-card">
-      <span class="tag">DISCOVERIES</span>
-      <h3>A small London discovery</h3>
-      <p>Photography and notes from everyday life in the city.</p>
-    </div>
-  </div>
-</section>
+  <div data-footer-include="/includes/footer-copyright.html"></div>
 
+  <script src="/js/header.js" defer></script>
+  <script src="/js/footer.js" defer></script>
 
-<section id="blog">
-  <div class="section-head">
-    <span class="num">04</span>
-    <h2>Blog</h2>
-  </div>
+  <!-- Loads the latest three posts from blog.html (same logic as the original index) -->
+  <script>
+    fetch('/blog.html')
+      .then(response => response.text())
+      .then(text => {
+        const doc = new DOMParser().parseFromString(text, 'text/html');
+        const posts = doc.querySelectorAll('.blog-card');
+        const container = document.getElementById('latest-posts');
 
-  <div id="latest-posts" class="work-grid">
-    <!-- Latest blog posts are loaded automatically from blog.html -->
-  </div>
+        Array.from(posts).slice(0, 3).forEach(post => {
+          const card = document.createElement('a');
+          card.className = 'work-card';
+          card.href = post.getAttribute('href');
 
-  <p style="margin-top:24px;">
-    <a class="btn" href="/blog.html">View all blog posts →</a>
-  </p>
-</section>
+          const date = post.querySelector('.date');
+          const title = post.querySelector('h3');
+          const description = post.querySelector('p');
 
-<section id="socials">
-  <div class="section-head">
-    <span class="num">03</span>
-    <h2>Find me online</h2>
-  </div>
-  <div class="socials">
-      <a href="https://bsky.app/profile/thepostcardedit.bsky.social" target="_blank" rel="noopener">Bluesky ↗</a>
-      <a href="https://www.instagram.com/the_postcard_edit/" target="_blank" rel="noopener">Instagram ↗</a>
-      <a href="https://www.pinterest.com/the_postcard_edit/" target="_blank" rel="noopener">Pinterest ↗</a>
-      <a href="https://thepostcardedit.substack.com/" target="_blank" rel="noopener">Substack ↗</a>
-      <a href="https://www.threads.com/@the_postcard_edit" target="_blank" rel="noopener">Threads ↗</a>
-      <a href="https://www.tiktok.com/@the_postcard_edit" target="_blank" rel="noopener">TikTok ↗</a>
-      <a href="https://x.com/thepostcardedit" target="_blank" rel="noopener">X ↗</a>
-      <a href="https://www.youtube.com/@the_postcard_edit" target="_blank" rel="noopener">Youtube ↗</a>
-    </div>
-</section>
+          card.innerHTML = `
+            ${date ? `<span class="tag">${date.textContent.trim()}</span>` : ''}
+            ${title ? `<h3>${title.innerHTML}</h3>` : ''}
+            ${description ? `<p>${description.innerHTML}</p>` : ''}
+          `;
 
-<footer>
-  © 2013–<span id="current-year"></span> The Postcard Edit | Est. 2013 · London
-  <p>Photography, places and everyday discoveries.</p>
-</footer>
-
-<script>
-  document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
+          container.appendChild(card);
+        });
+      })
+      .catch(() => {
+        document.getElementById('latest-posts').innerHTML =
+          '<p>Latest posts are available on the blog.</p>';
+      });
+  </script>
 
 </body>
 </html>
